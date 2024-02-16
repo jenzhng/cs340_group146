@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Records</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <div class="topnav">
+        <a class="customers" href="#home">Customers</a>
+        <a href="#orders">Orders</a>
+        <a href="#records">Records</a>
+        <a href="#genres">Genres</a>
+      </div>
+      <!--SELECT * FROM Orders CRUD TABLE-->
+      <div>
+        <table border="2" cellpadding="7">
+            <tr>
+                <th>
+                    <a href="#">New</a>
+                </th>
+                <th></th>
+                <th>orderID</th>
+                <th>cid</th>
+                <th>date</th>
+            </tr>
+            <tr>
+                <td><a href="#">Edit</a></td>
+                <td><a href="#">Delete</a></td>
+                <!--Dummy data from DDL here as <td>-->
+            </tr>
+            <tr>
+                <td><a href="#">Edit</a></td>
+                <td><a href="#">Delete</a></td>
+                <!--Dummy data from DDL here as <td>-->
+            </tr>
+            <tr>
+                <td><a href="#">Edit</a></td>
+                <td><a href="#">Delete</a></td>
+                <!--Dummy data from DDL here as <td>-->
+            </tr>
+        </table>
+      </div>
+<!--INSERT ORDER-->
+      <div>
+        <form id="addOrder">
+            <legend><strong>Add Order</strong></legend>
+            <fieldset>
+                <label>cid: </label>
+                <select id="cid" name="customerID">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="fiat">Fiat</option>
+                  </select>
+                <label>Date:</label>
+                <input type="text">
+            </fieldset>
+            <input class="btn" type="submit" id="addOrder" value="Add Order">
+            <input class="btn" type="submit" value="Cancel">
+        </form>
+      </div>
+</body>
+</html>
