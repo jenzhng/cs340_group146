@@ -3,7 +3,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Orders</title>
+    <title>Customers</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
@@ -15,7 +15,7 @@
         <a href="records.html">Records</a>
         <a href="genre.html">Genres</a>
       </div>
-      <!--SELECT * FROM Orders CRUD TABLE-->
+<!--SELECT * FROM CUSTOMERS CRUD TABLE-->
       <div>
         <table border="2" cellpadding="7">
             <tr>
@@ -23,50 +23,48 @@
                     <a href="#">New</a>
                 </th>
                 <th></th>
-                <th>orderID</th>
-                <th>cid</th>
-                <th>date (YYYYMMDD)</th>
+                <th>customerID</th>
+                <th>name</th>
+                <th>email</th>
             </tr>
             <tr>
                 <td><a href="#">Edit</a></td>
                 <td><a href="#">Delete</a></td>
                 <td>1</td>
-                <td>1</td>
-                <td>2024-02-08</td>
+                <td>Jane Smith</td>
+                <td>jsmith@gmail.com</td>
             </tr>
             <tr>
                 <td><a href="#">Edit</a></td>
                 <td><a href="#">Delete</a></td>
                 <td>2</td>
-                <td>3</td>
-                <td>2024-02-06</td>
+                <td>Michael Jones</td>
+                <td>mjones@gmail.com</td>
             </tr>
             <tr>
                 <td><a href="#">Edit</a></td>
                 <td><a href="#">Delete</a></td>
                 <td>3</td>
-                <td>2</td>
-                <td>2024-02-07</td>
+                <td>Corey Rodriguez</td>
+                <td>crodriguez@gmail.com</td>
             </tr>
         </table>
       </div>
-<!--INSERT ORDER-->
+<!--INSERT CUSTOMER-->
       <div>
-        <form id="addOrder">
-            <legend><strong>Add Order</strong></legend>
+        <form id="addCustomer">
+            <legend><strong>Add New Customer</strong></legend>
             <fieldset>
-                <label>Customer: </label>
-                <select id="cid" name="customerID">
-                    <option value="volvo">Jane Smith</option>
-                    <option value="saab">Corey Rodriguez</option>
-                    <option value="fiat">Michael Jones</option>
-                  </select>
-                <label>Date:</label>
-                <input type="date">
+                <label>Full Name:</label>
+                <input type="text">
+                <label>Email:</label>
+                <input type="text">
             </fieldset>
-            <input class="btn" type="submit" id="addOrder" value="Add Order">
+            <input class="btn" type="submit" id="addCustomer" value="Add New Customer">
             <input class="btn" type="submit" value="Cancel">
         </form>
       </div>
+
+    
 </body>
 </html>
