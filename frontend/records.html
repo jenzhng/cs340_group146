@@ -32,17 +32,29 @@
             <tr>
                 <td><a href="#">Edit</a></td>
                 <td><a href="#">Delete</a></td>
-                <!--Dummy data from DDL here as <td>-->
+                <td>1</td>
+                <td>Be the Cowboy</td>
+                <td>Mitski</td>
+                <td>3</td>
+                <td>30.00</td>
             </tr>
             <tr>
                 <td><a href="#">Edit</a></td>
                 <td><a href="#">Delete</a></td>
-                <!--Dummy data from DDL here as <td>-->
+                <td>2</td>
+                <td>Rumors</td>
+                <td>Fleetwood Mac</td>
+                <td>5</td>
+                <td>50.00</td>
             </tr>
             <tr>
                 <td><a href="#">Edit</a></td>
                 <td><a href="#">Delete</a></td>
-                <!--Dummy data from DDL here as <td>-->
+                <td>3</td>
+                <td>Over The Garden Wall Original Soundtrack LP</td>
+                <td>Sam Wolfe Connelly</td>
+                <td>1</td>
+                <td>100.00</td>
             </tr>
         </table>
       </div>
@@ -52,13 +64,13 @@
             <legend><strong>Add Record</strong></legend>
             <fieldset>
                 <label>title: </label>
-                <input type="text">
+                <input type="text" form="addRecord">
                 <label>artist:</label>
-                <input type="text">
+                <input type="text" form="addRecord">
                 <label>quantity:</label>
-                <input type="text">
+                <input type="text" form="addRecord">
                 <label>price:</label>
-                <input type="text">
+                <input type="text" form="addRecord">
             </fieldset>
             <input class="btn" type="submit" id="addRecord" value="Add Record">
             <input class="btn" type="submit" value="Cancel">
@@ -67,16 +79,17 @@
 <!--UPDATE RECORD-->
       <div>
         <form id="updateRecord">
-            <legend><strong>Add Record</strong></legend>
+            <legend><strong>Update Record</strong></legend>
             <fieldset>
+                <label>recordID: 2</label>
                 <label>title: </label>
-                <input type="text">
+                <input type="text" form="updateRecord" value="Rumors">
                 <label>artist:</label>
-                <input type="text">
+                <input type="text" form="updateRecord" value="Fleetwood Mac">
                 <label>quantity:</label>
-                <input type="text">
+                <input type="text" form="updateRecord" value="5">
                 <label>price:</label>
-                <input type="text">
+                <input type="text" form="updateRecord" value="50.00">
             </fieldset>
             <input class="btn" type="submit" id="updateRecord" value="Update Record">
             <input class="btn" type="submit" value="Cancel">
