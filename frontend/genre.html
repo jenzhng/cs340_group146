@@ -50,7 +50,7 @@
         <form id="addGenre">
             <legend><strong>Add Genre</strong></legend>
             <fieldset>
-                <label>cid: </label>
+                <label>gid: </label>
                 <select id="gid" name="genreID">
                     <option value="indie">Indie</option>
                     <option value="soundtrack">Soundtrack</option>
@@ -62,6 +62,36 @@
                 <input type="text">
             </fieldset>
             <input class="btn" type="submit" id="addGenre" value="Add Genre">
+            <input class="btn" type="submit" value="Cancel">
+        </form>
+		<form id="updateGenre">
+            <legend><strong>Update Genre</strong></legend>
+            <fieldset>
+                <label>gid: </label>
+                <select id="gid" name="genreID">
+                    <option value="indie">Indie</option>
+                    <option value="soundtrack">Soundtrack</option>
+                    <option value="classic-rock">Classic Rock</option>
+                  </select>
+				<label>Name:</label>
+                <input type="text">
+                <label>Description:</label>
+                <input type="text">
+            </fieldset>
+            <input class="btn" type="submit" id="updateGenre" value="Update Genre">
+            <input class="btn" type="submit" value="Cancel">
+        </form>
+		<form id="deleteGenre">
+            <legend><strong>Delete Genre</strong></legend>
+            <fieldset>
+                <label>gid: </label>
+                <select id="gid" name="genreID">
+                    <option value="indie">Indie</option>
+                    <option value="soundtrack">Soundtrack</option>
+                    <option value="classic-rock">Classic Rock</option>
+                  </select>
+            </fieldset>
+            <input class="btn" type="submit" id="deleteGenre" value="Delete Genre">
             <input class="btn" type="submit" value="Cancel">
         </form>
       </div>
