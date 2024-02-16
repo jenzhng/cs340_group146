@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Genres</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <div class="topnav">
+        <a class="customers" href="#home">Customers</a>
+        <a href="#orders">Orders</a>
+        <a href="#records">Records</a>
+        <a href="#genres">Genres</a>
+      </div>
+      <!--SELECT * FROM Orders CRUD TABLE-->
+      <div>
+        <table border="2" cellpadding="7">
+            <tr>
+                <th>
+                    <a href="#">New</a>
+                </th>
+                <th></th>
+                <th>genreID</th>
+                <th>gid</th>
+                <th>name</th>
+                <th>description</th>
+            </tr>
+            <tr>
+                <td><a href="#">Edit</a></td>
+                <td><a href="#">Delete</a></td>
+                <!--Dummy data from DDL here as <td>-->
+            </tr>
+            <tr>
+                <td><a href="#">Edit</a></td>
+                <td><a href="#">Delete</a></td>
+                <!--Dummy data from DDL here as <td>-->
+            </tr>
+            <tr>
+                <td><a href="#">Edit</a></td>
+                <td><a href="#">Delete</a></td>
+                <!--Dummy data from DDL here as <td>-->
+            </tr>
+        </table>
+      </div>
+<!--INSERT ORDER-->
+      <div>
+        <form id="addGenre">
+            <legend><strong>Add Genre</strong></legend>
+            <fieldset>
+                <label>cid: </label>
+                <select id="gid" name="genreID">
+                    <option value="indie">Indie</option>
+                    <option value="soundtrack">Soundtrack</option>
+                    <option value="classic-rock">Classic Rock</option>
+                  </select>
+                <label>Name:</label>
+                <input type="text">
+                <label>Description:</label>
+                <input type="text">
+            </fieldset>
+            <input class="btn" type="submit" id="addGenre" value="Add Genre">
+            <input class="btn" type="submit" value="Cancel">
+        </form>
+      </div>
+</body>
+</html>
