@@ -1,4 +1,5 @@
 CS340 Project
+[Project Guide Link](https://canvas.oregonstate.edu/courses/1946034/pages/cs340-project-guide)
 
 ***Restructuring the schema:***
 1. **Customers Table**
@@ -28,3 +29,9 @@ CS340 Project
     - add additional css
     - make html look nice by adding spacing
     - add the 'find all Records a Customer has ordered' to Records page (with dropdown selection for Customer)
+    - make something NULLable (based on feedback)
+    - make sure deletes from M:M relationship doesn't create data anomalies
+        - based on the project guide
+        - need to add ON DELETE CASCADE to foreign key references
+    - add INSERTS, DELETES, and UPDATES to M:M relationships
+    
