@@ -5,23 +5,51 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Orders</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-    <div class="topnav">
-        <a href="index.html">Home</a>
-        <a href="customers.html">Customers</a>
-        <a href="orders.html">Orders</a>
-        <a href="records.html">Records</a>
-        <a href="genre.html">Genres</a>
-        <a href="recordorders.html">RecordOrders</a>
-        <a href="genrerecords.html">GenreRecords</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="customers.html">Customers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="orders.html">Orders</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="records.html">Records</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="genre.html">Genres</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="recordorders.html">RecordOrders</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="genrerecords.html">GenreRecords</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="bg-light m-5 p-3 border-start border-success border-5">
+        <h2>Orders</h2>
       </div>
 
       <!--SELECT * FROM Orders CRUD TABLE-->
-      <div>
-        <table border="2" cellpadding="7">
+      <div class="container">
+        <table class="table table-light table-hover table-striped">
+            <caption>List of all Orders currently in the database</caption>
+
             <tr>
                 <th>
                     <a href="#">New</a>
@@ -29,7 +57,7 @@
                 <th></th>
                 <th>orderID</th>
                 <th>customerID</th>
-                <th>orderDate (YYYYMMDD)</th>
+                <th>orderDate</th>
             </tr>
             <tr>
                 <td><a href="#">Edit</a></td>
@@ -55,22 +83,33 @@
         </table>
       </div>
 <!--INSERT ORDER-->
-      <div>
-        <form id="addOrder">
-            <legend><strong>Add Order</strong></legend>
-            <fieldset>
-                <label>Customer: </label>
-                <select id="cid" name="customerID">
-                    <option value="volvo">Jane Smith</option>
-                    <option value="saab">Corey Rodriguez</option>
-                    <option value="fiat">Michael Jones</option>
-                  </select>
-                <label>Date:</label>
-                <input type="date">
-            </fieldset>
-            <input class="btn" type="submit" id="addOrder" value="Add Order">
-            <input class="btn" type="submit" value="Cancel">
-        </form>
-      </div>
+      <section id="addOrder">
+        <div class="container">
+            <div class="row justify-content-center my-5">
+                <form>
+                    <legend><strong>Add a New Order to the Database</strong></legend>
+                    <label>Customer:
+                        <select>        
+                            <option value="jane">Jane Smith</option>
+                            <option value="corey">Corey Rodriguez</option>
+                            <option value="michael">Michael Jones</option>
+                       </select>
+                    <label>Date Order Was Placed: </label>
+                    <input type="date">
+                    <div class="row">
+                        <div class="col-md-3 my-3">
+                            <input class="btn btn-primary" type="submit" id="addOrder" value="Add New Order">
+                            <input class="btn btn-danger" type="submit" value="Cancel">
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+      </section>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </body>
 </html>
