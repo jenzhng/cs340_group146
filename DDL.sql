@@ -11,8 +11,10 @@ SET AUTOCOMMIT = 0;
 
 CREATE OR REPLACE TABLE Customers (
     customerID int NOT NULL AUTO_INCREMENT,
-    name varchar(255) NOT NULL,
+    firstName varchar(255) NOT NULL,
+    lastName varchar(255) NOT NULL,
     email varchar(255) NOT NULL,
+    phoneNumber varchar(10) NOT NULL,
     PRIMARY KEY (customerID)
 );
 
