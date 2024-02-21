@@ -23,3 +23,8 @@ CS340 Project
         - added these for RecordOrders and GenreRecords pages that we need to add based on feedback
 6. **DDL**
     - updated dummy data to match changes
+
+### TODO:
+    - add additional css
+    - make html look nice by adding spacing
+    - add the 'find all Records a Customer has ordered' to Records page (with dropdown selection for Customer)
