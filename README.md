@@ -1,6 +1,6 @@
 CS340 Project
 
-### Restructuring the schema:
+***Restructuring the schema:***
     - **Customers Table**
         - separated name into firstName and lastName attributes
         - added phoneNumber as a varchar(12) in the format of "123-456-7890"
