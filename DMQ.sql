@@ -24,7 +24,8 @@ FROM Customers
 JOIN Orders ON Customers.customerID = Orders.customerID
 JOIN RecordOrders ON Orders.orderID = RecordOrders.orderID
 JOIN Records ON RecordOrders.recordID = Records.recordID
-GROUP BY Customers.customerID;
+GROUP BY Customers.customerID
+ORDER BY totalSpent DESC;
 
 -- GenreRecords: get a list of all Records along with their associated Genre
 SELECT Records.recordID, Records.title, Records.artist, Genres.name AS genre, Genres.description
