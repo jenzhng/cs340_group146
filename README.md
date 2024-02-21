@@ -1,6 +1,7 @@
 [CS340 Project Guide Link](https://canvas.oregonstate.edu/courses/1946034/pages/cs340-project-guide)
-[Bootstrap Docs](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
 
+
+[Bootstrap Docs](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
 
 ***Restructuring the schema:***
 1. **Customers Table**
