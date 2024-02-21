@@ -18,6 +18,36 @@ SELECT * FROM Records;
 -- Genres
 SELECT * FROM Genres;
 
+-- RecordOrders: get totalSpent for all Customers
+SELECT Customers.customerID, Customers.firstName, Customers.lastName, SUM(Records.price * RecordOrders.qtyOrdered) as totalSpent
+FROM Customers
+JOIN Orders ON Customers.customerID = Orders.customerID
+JOIN RecordOrders ON Orders.orderID = RecordOrders.orderID
+JOIN Records ON RecordOrders.recordID = Records.recordID
+GROUP BY Customers.customerID;
+
+-- GenreRecords: get a list of all Records along with their associated Genre
+SELECT Records.recordID, Records.title, Records.artist, Genres.name AS genre, Genres.description
+FROM Records
+JOIN GenreRecords ON Records.recordID = GenreRecords.recordID
+JOIN Genres ON GenreRecords.genreID = Genres.genreID;
+
+-- Get a list of all Records a Customer has ordered
+SELECT Records.recordID, Records.title, Records.artist
+FROM Customers
+JOIN Orders ON Customers.customerID = Orders.customerID
+JOIN RecordOrders ON Orders.orderID = RecordOrders.orderID
+JOIN Records ON RecordOrders.recordID = Records.recordID
+WHERE Customers.customerID = (SELECT customerID FROM Customers WHERE email = :emailInput:);
+
+-- Get totalSpent for a specific Customer
+SELECT Customers.customerID, Customers.firstName, Customers.lastName, SUM(Records.price * RecordOrders.qtyOrdered) as totalSpent
+FROM Customers
+JOIN Orders ON Customers.customerID = Orders.customerID
+JOIN RecordOrders ON Orders.orderID = RecordOrders.orderID
+JOIN Records ON RecordOrders.recordID = Records.recordID
+WHERE Customers.customerID = (SELECT customerID FROM Customers WHERE email = :emailInput:);
+
 /* INSERT QUERIES */
 
 -- Customers
