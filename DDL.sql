@@ -103,23 +103,6 @@ VALUES ((SELECT recordID FROM Records WHERE title = 'Be the Cowboy'), (SELECT ge
 ((SELECT recordID FROM Records WHERE title = 'Over The Garden Wall Original Soundtrack LP'), 
 (SELECT genreID FROM Genres WHERE name = 'Soundtrack'));
 
-/* SAMPLE QUERY TO GET TOTAL SPENT 
-SELECT 
-    Customers.customerID,
-    Customers.firstName,
-    Customers.lastName,
-    SUM(Records.price * RecordOrders.qtyOrdered) AS totalSpent
-FROM 
-    Customers
-JOIN 
-    Orders ON Customers.customerID = Orders.customerID
-JOIN 
-    RecordOrders ON Orders.orderID = RecordOrders.orderID
-JOIN 
-    Records ON RecordOrders.recordID = Records.recordID
-GROUP BY 
-    Customers.customerID;
-*/
 
 -- Enabling foreign key checks
 SET FOREIGN_KEY_CHECKS=1;
