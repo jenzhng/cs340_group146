@@ -38,7 +38,7 @@ VALUES (:genreInput:, :descriptionInput:);
 
 -- RecordOrders
 INSERT INTO RecordOrders (orderID, recordID, qtyOrdered)
-VALUES ((SELECT orderID from Orders WHERE cid = (SELECT customerID FROM Customers WHERE email = :emailInput:)), 
+VALUES ((SELECT orderID from Orders WHERE customerID = (SELECT customerID FROM Customers WHERE email = :emailInput:)), 
 (SELECT recordID FROM Records WHERE title = :titleInput), :qtyOrderedInput:);
 
 -- GenreRecords

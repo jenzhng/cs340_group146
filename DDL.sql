@@ -104,12 +104,21 @@ VALUES ((SELECT recordID FROM Records WHERE title = 'Be the Cowboy'), (SELECT ge
 (SELECT genreID FROM Genres WHERE name = 'Soundtrack'));
 
 /* SAMPLE QUERY TO GET TOTAL SPENT 
-SELECT Customers.firstName, Customers.lastName, Orders.orderID, SUM(Records.price * RecordOrders.qtyOrdered) as TotalSpent
-    -> FROM Customers
-    -> JOIN Orders ON Customers.customerID = Orders.customerID
-    -> JOIN RecordOrders ON Orders.orderID = RecordOrders.orderID
-    -> JOIN Records ON RecordOrders.recordID = Records.recordID
-    -> GROUP BY Customers.firstName, Customers.lastName, Orders.orderID;
+SELECT 
+    Customers.customerID,
+    Customers.firstName,
+    Customers.lastName,
+    SUM(Records.price * RecordOrders.qtyOrdered) AS totalSpent
+FROM 
+    Customers
+JOIN 
+    Orders ON Customers.customerID = Orders.customerID
+JOIN 
+    RecordOrders ON Orders.orderID = RecordOrders.orderID
+JOIN 
+    Records ON RecordOrders.recordID = Records.recordID
+GROUP BY 
+    Customers.customerID;
 */
 
 -- Enabling foreign key checks
