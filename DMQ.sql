@@ -21,32 +21,32 @@ SELECT * FROM Genres;
 /* INSERT QUERIES */
 
 -- Customers
-INSERT INTO Customers (name, email)
-VALUES(:name:, :email:);
+INSERT INTO Customers (firstName, lastName, email, phoneNumber)
+VALUES(:firstName:, :lastName:, :email:, :phoneNumber);
 
 -- Orders
-INSERT INTO Orders (cid, date)
-VALUES ((SELECT customerID FROM Customers WHERE name = :desiredCustomerName:), :currentDate:);
+INSERT INTO Orders (customerID, orderDate)
+VALUES ((SELECT customerID FROM Customers WHERE email = :desiredCustomerEmail:), :currentDate:);
 
 -- Records
-INSERT INTO Records (title, artist, quantity, price)
-VALUES (:titleInput:, :artistInput:, :quantityInput:, :priceInput:);
+INSERT INTO Records (title, artist, qtyStock, price)
+VALUES (:titleInput:, :artistInput:, :qtyStockInput:, :priceInput:);
 
 -- Genres
 INSERT INTO Genres (name, description)
 VALUES (:genreInput:, :descriptionInput:);
 
 -- RecordOrders
-INSERT INTO RecordOrders (orderID, recordID)
+INSERT INTO RecordOrders (orderID, recordID, qtyOrdered)
 VALUES ((SELECT orderID from Orders WHERE cid = (SELECT customerID FROM Customers WHERE email = :emailInput:)), 
-(SELECT recordID FROM Records WHERE title = :titleInput));
+(SELECT recordID FROM Records WHERE title = :titleInput), :qtyOrderedInput:);
 
 -- GenreRecords
 INSERT INTO GenreRecords (recordID, genreID)
-VALUES ((SELECT recordID FROM Records WHERE title = :titleInput:), (SELECT genreID FROM Genres WHERE name = :genreNameInput:)),
+VALUES ((SELECT recordID FROM Records WHERE title = :titleInput:), (SELECT genreID FROM Genres WHERE name = :genreNameInput:));
 
 -- UPDATE QUERY
-UPDATE Records SET title = :titleInput:, artist = :artistInput:, quantity = :quantityInput:, price = :priceInput:
+UPDATE Records SET title = :titleInput:, artist = :artistInput:, qtyStock = :qtyStockInput:, price = :priceInput:
 WHERE recordID = :recordId_from_form:;
 
 -- DELETE QUERY
