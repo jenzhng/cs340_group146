@@ -21,9 +21,10 @@ CREATE OR REPLACE TABLE Customers (
 -- Create Orders Table
 CREATE OR REPLACE TABLE Orders (
     orderID int NOT NULL AUTO_INCREMENT,
-    cid int,
-    date datetime,
-    FOREIGN KEY (cid) REFERENCES Customers (customerID),
+    customerID int,
+    orderDate datetime,
+    qtyOrdered INT,
+    FOREIGN KEY (customerID) REFERENCES Customers (customerID),
     PRIMARY KEY (orderID)
 );
 
