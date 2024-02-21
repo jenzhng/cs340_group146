@@ -5,36 +5,64 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>RecordOrders</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-    <div class="topnav">
-        <a href="index.html">Home</a>
-        <a href="customers.html">Customers</a>
-        <a href="orders.html">Orders</a>
-        <a href="records.html">Records</a>
-        <a href="genre.html">Genres</a>
-        <a href="recordorders.html">RecordOrders</a>
-        <a href="genrerecords.html">GenreRecords</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="customers.html">Customers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="orders.html">Orders</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="records.html">Records</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="genre.html">Genres</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="recordorders.html">RecordOrders</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="genrerecords.html">GenreRecords</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="bg-light m-5 p-3 border-start border-success border-5">
+        <h2>GenreRecords</h2>
       </div>
 
-      <h4>All Records in stock by Genre</h4>
-      <div>
-        <table border="2" cellpadding="7">
+      <div class="container">
+        <table class="table table-light table-hover table-striped">
+            <caption>All Records in Stock by Genre</caption>
             <tr>
                 <th>recordID</th>
-                <th>title</th>
-                <th>artist</th>
-                <th>stock</th>
-                <th>genre</th>
-                <th>description</th>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Quantity in Stock</th>
+                <th>Inventory Value ($)</th>
+                <th>Genre</th>
+                <th>Description</th>
             </tr>
             <tr>
                 <td>1</td>
                 <td>Be the Cowboy</td>
                 <td>Mitski</td>
                 <td>100</td>
+                <td>3000.00</td>
                 <td>Indie</td>
                 <td>Alternative Music</td>
             </tr>
@@ -43,6 +71,7 @@
                 <td>Rumors</td>
                 <td>Fleetwood Mac</td>
                 <td>100</td>
+                <td>5000.00</td>
                 <td>Classic Rock</td>
                 <td>Rock music from the 1960s - 1990s</td>
             </tr>
@@ -51,12 +80,14 @@
                 <td>Over The Garden Wall Original Soundtrack LP</td>
                 <td>Sam Wolfe Connelly</td>
                 <td>25</td>
+                <td>2500.00</td>
                 <td>Soundtrack</td>
                 <td>Original Sountrack for TV/Film</td>
             </tr>
         </table>
       </div>
 
-    
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </body>
 </html>

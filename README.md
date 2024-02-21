@@ -1,4 +1,4 @@
-CS340 Project
+CS340
 [Project Guide Link](https://canvas.oregonstate.edu/courses/1946034/pages/cs340-project-guide)
 
 ***Restructuring the schema:***
@@ -34,4 +34,5 @@ CS340 Project
         - based on the project guide
         - need to add ON DELETE CASCADE to foreign key references
     - add INSERTS, DELETES, and UPDATES to M:M relationships
+
     

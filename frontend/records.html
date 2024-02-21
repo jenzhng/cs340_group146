@@ -5,34 +5,59 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Records</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-    <div class="topnav">
-        <a href="index.html">Home</a>
-        <a href="customers.html">Customers</a>
-        <a href="orders.html">Orders</a>
-        <a href="records.html">Records</a>
-        <a href="genre.html">Genres</a>
-        <a href="recordorders.html">RecordOrders</a>
-        <a href="genrerecords.html">GenreRecords</a>
-
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="customers.html">Customers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="orders.html">Orders</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="records.html">Records</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="genre.html">Genres</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="recordorders.html">RecordOrders</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="genrerecords.html">GenreRecords</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="bg-light m-5 p-3 border-start border-success border-5">
+        <h2>Records</h2>
       </div>
 
       <!--SELECT * FROM Records CRUD TABLE-->
-      <div>
-        <table border="2" cellpadding="7">
+      <div class="container">
+        <table class="table table-light table-hover table-striped">
             <tr>
                 <th>
                     <a href="#">New</a>
                 </th>
                 <th></th>
                 <th>recordID</th>
-                <th>title</th>
-                <th>artist</th>
-                <th>qtyStock</th>
-                <th>price</th>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Quantity in Stock</th>
+                <th>Price</th>
             </tr>
             <tr>
                 <td><a href="#">Edit</a></td>
@@ -64,41 +89,64 @@
         </table>
       </div>
 <!--INSERT RECORD-->
-      <div>
-        <form id="addRecord">
-            <legend><strong>Add Record</strong></legend>
-            <fieldset>
-                <label>title: </label>
-                <input type="text" form="addRecord">
-                <label>artist:</label>
-                <input type="text" form="addRecord">
-                <label>quantity:</label>
-                <input type="text" form="addRecord">
-                <label>price:</label>
-                <input type="text" form="addRecord">
-            </fieldset>
-            <input class="btn" type="submit" id="addRecord" value="Add Record">
-            <input class="btn" type="submit" value="Cancel">
-        </form>
-      </div>
+<section id="addRecord">
+    <div class="container">
+        <div class="row justify-content-center my-5">
+            <form>
+                <legend><strong>Add a New Record to the Database</strong></legend>
+                <label class="form-label">Title: </label>
+                <input type="text" class="form-control" id="title" placeholder="Title of the Record">
+                <label class="form-label">Artist:</label>
+                <input type="text" class="form-control" id="artist" placeholder="Artist of the Record">
+                <label for="email" class="form-label">Quantity in Stock: </label>
+                <input type="email" class="form-control" id="qtyStock" placeholder="100">
+                <label class="form-label">Price:</label>
+                <input type="text" class="form-control" id="price" placeholder="00.00">
+                <div class="row">
+                    <div class="col-md-3 my-3">
+                        <input class="btn btn-primary" type="submit" id="addRecord" value="Add New Record">
+                        <input class="btn btn-danger" type="submit" value="Cancel">
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+  </section>
 <!--UPDATE RECORD-->
-      <div>
-        <form id="updateRecord">
-            <legend><strong>Update Record</strong></legend>
-            <fieldset>
-                <label>recordID: 2</label>
-                <label>title: </label>
-                <input type="text" form="updateRecord" value="Rumors">
-                <label>artist:</label>
-                <input type="text" form="updateRecord" value="Fleetwood Mac">
-                <label>quantity:</label>
-                <input type="text" form="updateRecord" value="5">
-                <label>price:</label>
-                <input type="text" form="updateRecord" value="50.00">
-            </fieldset>
-            <input class="btn" type="submit" id="updateRecord" value="Update Record">
-            <input class="btn" type="submit" value="Cancel">
-        </form>
-      </div>
+<section id="updateRecord">
+    <div class="container">
+        <div class="row justify-content-center my-5">
+            <form>
+                <legend><strong>Update an Existing Records's Information</strong></legend>
+                <label>Record:
+                    <select>        
+                        <option value="1">Be The Cowboy</option>
+                        <option value="2">Rumors</option>
+                        <option value="3">Over The Garden Wall Original Soundtrack LP</option>
+                   </select>
+                </label>
+                <label class="form-label"></label>
+                <input type="text" class="form-control" id="title" placeholder="Be The Cowboy">
+                <label class="form-label"></label>
+                <input type="text" class="form-control" id="lastName" placeholder="Mitski">
+                <label for="email" class="form-label"></label>
+                <input type="email" class="form-control" id="email" placeholder="100">
+                <label class="form-label">Phone Number:</label>
+                <input type="text" class="form-control" id="phone" placeholder="30.00">
+                <div class="row">
+                    <div class="col-md-3 my-3">
+                        <input class="btn btn-primary" type="submit" id="updateRecord" value="Update Record">
+                        <input class="btn btn-danger" type="submit" value="Cancel">
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+  </section>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </body>
 </html>
