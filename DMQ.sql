@@ -28,7 +28,7 @@ GROUP BY Customers.customerID
 ORDER BY totalSpent DESC;
 
 -- GenreRecords: get a list of all Records along with their associated Genre
-SELECT Records.recordID, Records.title, Records.artist, Genres.name AS genre, Genres.description
+SELECT Records.recordID, Records.title, Records.artist, Records.qtyStock as Stock, Genres.name AS genre, Genres.description
 FROM Records
 JOIN GenreRecords ON Records.recordID = GenreRecords.recordID
 JOIN Genres ON GenreRecords.genreID = Genres.genreID;
