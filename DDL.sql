@@ -23,7 +23,6 @@ CREATE OR REPLACE TABLE Orders (
     orderID int NOT NULL AUTO_INCREMENT,
     customerID int,
     orderDate datetime,
-    qtyOrdered INT,
     FOREIGN KEY (customerID) REFERENCES Customers (customerID),
     PRIMARY KEY (orderID)
 );
@@ -33,7 +32,7 @@ CREATE OR REPLACE TABLE Records (
     recordID int NOT NULL AUTO_INCREMENT,
     title varchar(255) NOT NULL,
     artist varchar(255) NOT NULL,
-    quantity int NOT NULL,
+    qtyStock int NOT NULL,
     price float(10, 2) NOT NULL,
     PRIMARY KEY (recordID)
 );
@@ -50,6 +49,7 @@ CREATE OR REPLACE TABLE Genres (
 CREATE OR REPLACE TABLE RecordOrders (
     orderID int,
     recordID int,
+    qtyOrdered int,
     FOREIGN KEY (orderID) REFERENCES Orders (orderID),
     FOREIGN KEY (recordID) REFERENCES Records (recordID),
     PRIMARY KEY (orderID, recordID)
