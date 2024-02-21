@@ -95,7 +95,9 @@ VALUES ((SELECT orderID from Orders WHERE customerID = (SELECT customerID FROM C
 ((SELECT orderID FROM Orders WHERE customerID = (SELECT customerID FROM Customers WHERE email = 'mjones@gmail.com')), 
 (SELECT recordID FROM Records WHERE title = 'Over The Garden Wall Original Soundtrack LP'), 1),
 ((SELECT orderID FROM Orders WHERE customerID = (SELECT customerID FROM Customers WHERE email = 'jsmith@gmail.com')),
-(SELECT recordID FROM Records WHERE title = 'Rumors'), 1);
+(SELECT recordID FROM Records WHERE title = 'Rumors'), 1),
+((SELECT orderID FROM Orders WHERE customerID = (SELECT customerID FROM Customers WHERE email = 'jsmith@gmail.com')),
+(SELECT recordID FROM Records WHERE title = 'Be the Cowboy'), 1);
 
 INSERT INTO GenreRecords (recordID, genreID)
 VALUES ((SELECT recordID FROM Records WHERE title = 'Be the Cowboy'), (SELECT genreID FROM Genres WHERE name = 'Indie')),
