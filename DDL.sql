@@ -14,7 +14,7 @@ CREATE OR REPLACE TABLE Customers (
     firstName varchar(255) NOT NULL,
     lastName varchar(255) NOT NULL,
     email varchar(255) NOT NULL,
-    phoneNumber varchar(12) NOT NULL,
+    phoneNumber varchar(12),
     PRIMARY KEY (customerID)
 );
 -- Record phoneNumber as 123-456-7890
@@ -24,7 +24,7 @@ CREATE OR REPLACE TABLE Orders (
     orderID int NOT NULL AUTO_INCREMENT,
     customerID int,
     orderDate datetime,
-    FOREIGN KEY (customerID) REFERENCES Customers (customerID),
+    FOREIGN KEY (customerID) REFERENCES Customers (customerID) ON DELETE CASCADE,
     PRIMARY KEY (orderID)
 );
 -- Records when a Customer places an Order
@@ -52,8 +52,8 @@ CREATE OR REPLACE TABLE RecordOrders (
     orderID int,
     recordID int,
     qtyOrdered int,
-    FOREIGN KEY (orderID) REFERENCES Orders (orderID),
-    FOREIGN KEY (recordID) REFERENCES Records (recordID),
+    FOREIGN KEY (orderID) REFERENCES Orders (orderID) ON DELETE CASCADE,
+    FOREIGN KEY (recordID) REFERENCES Records (recordID) ON DELETE CASCADE,
     PRIMARY KEY (orderID, recordID)
 );
 -- Records what Record a Customer purchased and how many
@@ -63,8 +63,8 @@ CREATE OR REPLACE TABLE RecordOrders (
 CREATE OR REPLACE TABLE GenreRecords (
     recordID int,
     genreID int,
-    FOREIGN KEY (recordID) REFERENCES Records (recordID),
-    FOREIGN KEY (genreID) REFERENCES Genres (genreID),
+    FOREIGN KEY (recordID) REFERENCES Records (recordID) ON DELETE CASCADE,
+    FOREIGN KEY (genreID) REFERENCES Genres (genreID) ON DELETE CASCADE,
     PRIMARY KEY (recordID, genreID)
 );
 -- a Record can have multiple Genres and a Genre can have many Records associated with it
