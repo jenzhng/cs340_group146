@@ -1,0 +1,30 @@
+<! -- orders.hbs -->
+
+
+<div class="bg-light m-5 p-3 border-start border-success border-5">
+    <h2>Orders</h2>
+</div>
+
+<div class="container">
+    <table class="table table-light table-hover table-striped" id="orders-table">
+        <caption>List of all Orders currently in the database</caption>
+        <tr>
+            <th>
+                <a href="#">New</a>
+            </th>
+            <th></th>
+            {{#each data.[0]}}
+            <th>{{@key}}</th>
+            {{/each}}
+        </tr>
+        {{#each data}}
+        <tr>
+            <td><a href="#">Edit</a></td>
+            <td><button onclick="deleteOrder({{this.orderID}})">Delete</button></td>
+            <td>{{this.orderID}}</td>
+            <td>{{this.customerID}}</td>
+            <td>{{this.orderDate}}</td>
+        </tr>
+        {{/each}}
+    </table>
+</div>

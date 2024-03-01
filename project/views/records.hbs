@@ -1,0 +1,32 @@
+<! -- records.hbs -->
+
+
+<div class="bg-light m-5 p-3 border-start border-success border-5">
+    <h2>Records</h2>
+</div>
+
+<div class="container">
+    <table class="table table-light table-hover table-striped" id="records-table">
+        <caption>List of all Records currently in the database</caption>
+        <tr>
+            <th>
+                <a href="#">New</a>
+            </th>
+            <th></th>
+            {{#each data.[0]}}
+            <th>{{@key}}</th>
+            {{/each}}
+        </tr>
+        {{#each data}}
+        <tr>
+            <td><a href="#">Edit</a></td>
+            <td><button onclick="deleteRecord({{this.recordID}})">Delete</button></td>
+            <td>{{this.recordID}}</td>
+            <td>{{this.title}}</td>
+            <td>{{this.artist}}</td>
+            <td>{{this.qtyStock}}</td>
+            <td>{{this.price}}</td>
+        </tr>
+        {{/each}}
+    </table>
+</div>

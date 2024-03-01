@@ -1,0 +1,30 @@
+<! -- genres.hbs -->
+
+
+<div class="bg-light m-5 p-3 border-start border-success border-5">
+    <h2>Genres</h2>
+</div>
+
+<div class="container">
+    <table class="table table-light table-hover table-striped" id="genres-table">
+        <caption>List of all Genres currently in the database</caption>
+        <tr>
+            <th>
+                <a href="#">New</a>
+            </th>
+            <th></th>
+            {{#each data.[0]}}
+            <th>{{@key}}</th>
+            {{/each}}
+        </tr>
+        {{#each data}}
+        <tr>
+            <td><a href="#">Edit</a></td>
+            <td><button onclick="deleteGenre({{this.genreID}})">Delete</button></td>
+            <td>{{this.genreID}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.description}}</td>
+        </tr>
+        {{/each}}
+    </table>
+</div>

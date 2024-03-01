@@ -1,0 +1,26 @@
+<! -- recordsorders.hbs -->
+
+
+<div class="bg-light m-5 p-3 border-start border-success border-5">
+    <h2>RecordOrders</h2>
+</div>
+
+<div class="container">
+    <table class="table table-light table-hover table-striped" id="recordorders-table">
+        <caption>Total Dollar Amount Spent for Each Customer</caption>
+        <tr>
+            {{#each data.[0]}}
+            <th>{{@key}}</th>
+            {{/each}}
+        </tr>
+        {{#each data}}
+        <tr>
+
+            <td>{{this.customerID}}</td>
+            <td>{{this.this.firstName}}</td>
+            <td>{{this.lastName}}</td>
+            <td>${{this.totalSpent}}</td>
+        </tr>
+        {{/each}}
+    </table>
+</div>
