@@ -22,9 +22,28 @@
             <td><a href="#">Edit</a></td>
             <td><button onclick="deleteOrder({{this.orderID}})">Delete</button></td>
             <td>{{this.orderID}}</td>
-            <td>{{this.customerID}}</td>
+            <td>{{this.email}}</td>
             <td>{{this.orderDate}}</td>
         </tr>
         {{/each}}
     </table>
 </div>
+
+<!--INSERT ORDER-->
+<section id="addOrder">
+    <div class="container">
+        <div class="row justify-content-center my-5">
+            <form id="add-order-form" method="POST" action="/add-order">
+                <legend><strong>Add a New Order to the Database</strong></legend>
+                <label class="form-label">Customer:
+                    <select name="input-email" id="input-email">
+                        <option value="test">Select Customer by Email</option>
+                        {{#each data}}
+                        <option value="{{this.email}}">{{this.customerID}}</option>
+                        {{/each}}
+                    </select>
+                </label>
+            </form>
+        </div>
+    </div>
+</section>

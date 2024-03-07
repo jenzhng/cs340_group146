@@ -28,7 +28,9 @@ router.use((req, res, next) => {
 
 // ROUTES
 router.get('/orders', (req, res) => {
-  let query1 = 'SELECT * FROM Orders'
+  let query1 = `SELECT Orders.orderID, Customers.email, Orders.orderDate
+  FROM Orders
+  INNER JOIN Customers ON Orders.customerID = Customers.customerID`
 
   db.pool.query(query1, function (err, rows, fields) {
     if (err) {
@@ -36,6 +38,30 @@ router.get('/orders', (req, res) => {
       res.send('Error')
     } else {
       res.render('orders', { data: rows })
+    }
+  })
+})
+
+router.post('/add-order', (req, res) => {
+  let data = req.body;
+
+  query = `INSERT INTO Orders (customerID, orderDate)
+  VALUES ('${data.customerID}', ${data.orderDate})`
+
+  db.pool.query(query, function (err, result) {
+    if (err) {
+      console.log('Error: ' + err)
+    } else {
+      db.pool.query(
+        `SELECT * FROM Orders WHERE orderID = ${result.insertId}`,
+        function (err, rows, fields) {
+          if (err) {
+            console.log('Error: ' + err)
+          } else {
+            res.send(rows[0])
+          }
+        }
+      )
     }
   })
 })

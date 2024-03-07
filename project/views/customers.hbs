@@ -18,8 +18,8 @@
         </tr>
         {{#each data}}
         <tr>
-            <td><a href="#">Edit</a></td>
-            <td><button onclick="deleteCustomer({{this.customerID}})">Delete</button></td>
+            <td><a href="#updateCustomer">Edit</a></td>
+            <td><button class="btn-danger fw-bold" onclick="deleteCustomer({{this.customerID}})">Delete</button></td>
             <td>{{this.customerID}}</td>
             <td>{{this.firstName}}</td>
             <td>{{this.lastName}}</td>

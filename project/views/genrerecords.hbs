@@ -9,12 +9,14 @@
     <table class="table table-light table-hover table-striped" id="recordorders-table">
         <caption>List of all Records and their associated Genre</caption>
         <tr>
+            <th></th>
             {{#each data.[0]}}
             <th>{{@key}}</th>
             {{/each}}
         </tr>
         {{#each data}}
         <tr>
+            <td><button class="btn-danger fw-bold" onclick="deleteGenreRecord({{this.recordID}})">Delete</button></td>
             <td>{{this.recordID}}</td>
             <td>{{this.title}}</td>
             <td>{{this.artist}}</td>
