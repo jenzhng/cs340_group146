@@ -44,9 +44,10 @@ router.get('/orders', (req, res) => {
 
 router.post('/add-order', (req, res) => {
   let data = req.body;
-
+  console.log(data);
+  
   query = `INSERT INTO Orders (customerID, orderDate)
-  VALUES ('${data.customerID}', ${data.orderDate})`
+  VALUES ((SELECT customerID FROM Customers WHERE email = '${data.CustomerEmail}'), '${data.date}')`
 
   db.pool.query(query, function (err, result) {
     if (err) {
@@ -62,6 +63,53 @@ router.post('/add-order', (req, res) => {
           }
         }
       )
+    }
+  })
+})
+
+router.put('/update-order/', (req, res) => {
+  let data = req.body;
+  console.log(data);
+
+  let updateQueries = [];
+  let queryParams = [];
+
+  if (data.email) {
+    updateQueries.push('customerID = (SELECT customerID FROM Customers WHERE email = ?)')
+    queryParams.push(data.email)
+  }
+
+  if (data.date) {
+    updateQueries.push('orderDate = ?')
+    queryParams.push(data.date)
+  }
+
+  let query = `UPDATE Orders SET ${updateQueries.join(', ')} WHERE orderID = ?`
+  queryParams.push(data.orderID)
+  console.log(queryParams)
+
+  db.pool.query(query, queryParams, function (err, result) {
+    if (err) {
+      console.log(err)
+      res.send(err)
+    } else {
+      res.send(result)
+    }
+  })
+})
+
+router.delete('/delete-order/', (req, res) => {
+  let data = req.body;
+  console.log(data)
+  let orderID = parseInt(data.orderID)
+  let query = `DELETE FROM Orders WHERE orderID = ?`
+
+  db.pool.query(query, [orderID], function (err, result, fields) {
+    if (err) {
+      console.log(err)
+      res.sendStatus(400)
+    } else {
+      res.sendStatus(204)
     }
   })
 })
