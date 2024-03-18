@@ -1,4 +1,17 @@
+/* 
+CS340 Project Group 146
+Arberim Ame
+Jenny Zhong
 
+add_order.js
+    This file is the JavaScript file for the delete customer page.
+    It sets up the functionality for deleting a customer from the database.
+
+Citation: 
+    DATE: 02/28/2024
+    This code is adopted from the CS340 Node.js starter guide.
+    URL: https://github.com/osu-cs340-ecampus/nodejs-starter-app
+*/
 let addOrderForm = document.getElementById('add-order-form');
 
 addOrderForm.addEventListener('submit', function (e)
