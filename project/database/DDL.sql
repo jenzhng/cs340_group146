@@ -19,24 +19,12 @@ CREATE OR REPLACE TABLE Customers (
 );
 -- Record phoneNumber as 123-456-7890
 
--- Create Employees Table
-CREATE OR REPLACE TABLE Employees (
-    employeeID int NOT NULL AUTO_INCREMENT,
-    firstName varchar(255) NOT NULL,
-    lastName varchar(255) NOT NULL,
-    email varchar(255) NOT NULL,
-    phoneNumber varchar(12),
-    PRIMARY KEY (employeeID)
-);
-
 -- Create Orders Table
 CREATE OR REPLACE TABLE Orders (
     orderID int NOT NULL AUTO_INCREMENT,
     customerID int,
-	employeeID int,
     orderDate datetime,
     FOREIGN KEY (customerID) REFERENCES Customers (customerID) ON DELETE CASCADE,
-	FOREIGN KEY (employeeID) REFERENCES Employees (employeeID),
     PRIMARY KEY (orderID)
 );
 -- Records when a Customer places an Order
@@ -87,15 +75,10 @@ VALUES("Jane", "Smith", "jsmith@gmail.com", "856-555-2230"),
 ("Michael", "Jones", "mjones@gmail.com", "609-555-2251"),
 ("Corey", "Rodriguez", "crodriguez@gmail.com", "215-555-7326");
 
-INSERT INTO Employees(firstName, lastName, email, phoneNumber)
-VALUES("Edward", "Von Trapp", "evtrapp@gmail.com", "235-344-9008"),
-("Maria", "Augusta", "maugusta@gmail.com", "223-444-8888"),
-("Sarah", "Connor", "sconnor@gmail.com", "888-234-6666");
-
-INSERT INTO Orders (customerID, employeeID, orderDate)
-VALUES ((SELECT customerID FROM Customers WHERE email = 'jsmith@gmail.com'), (SELECT employeeID FROM Employees WHERE email = 'evtrapp@gmail.com'), '20240208'),
-((SELECT customerID FROM Customers WHERE email = 'crodriguez@gmail.com'), NULL, '20240206'),
-((SELECT customerID FROM Customers WHERE email = 'mjones@gmail.com'), NULL, '20240207');
+INSERT INTO Orders (customerID, orderDate)
+VALUES ((SELECT customerID FROM Customers WHERE email = 'jsmith@gmail.com'), '20240208'),
+((SELECT customerID FROM Customers WHERE email = 'crodriguez@gmail.com'), '20240206'),
+((SELECT customerID FROM Customers WHERE email = 'mjones@gmail.com'), '20240207');
 
 INSERT INTO Records (title, artist, qtyStock, price)
 VALUES('Be the Cowboy', 'Mitski', 100, 30.00),
